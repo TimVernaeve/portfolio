@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
 
 import Workcard from '@/components/WorkCard';
 
@@ -27,7 +30,7 @@ export default function Home() {
       <section className="grid min-h-full grid-cols-12 gap-x-4 content-center">
         <div className="flex flex-col h-fit col-span-6 gap-8">
           <Image width={500} height={500} src="https://picsum.photos/500" alt="bla" />
-          <p className="text-m">
+          <p className="text-l">
             Throughout the years I have developed a passion for everything related to design and web development. Being able to practice this passion on a professional level is a dream of mine. I’m rational and precise. I try to non-stop develop my skills and hope to learn many more things in the future.
           </p>
         </div>
@@ -35,7 +38,36 @@ export default function Home() {
           <h2 className="uppercase text-l">
             my stack
           </h2>
-          <Image width={500} height={500} src="https://picsum.photos/500" alt="bla" />
+          <TagCloud
+            options={(w: Window & typeof globalThis): TagCloudOptions => ({
+                radius: Math.min(600, w.innerWidth, w.innerHeight) / 2,
+                maxSpeed: "fast",
+                initSpeed: "fast",
+                keep: false
+            })}
+            onClick={(tag: string) => alert(tag)}
+            onClickOptions={{ passive: true }}
+          >
+            {[
+                "VSCode",
+                "TypeScript",
+                "React",
+                "Next",
+                "ESLint",
+                "Framer Motion",
+                "Vue",
+                "PostCSS",
+                "Tailwind",
+                "Sass",
+                "BEM",
+                "Node",
+                "PHP",
+                "MySQL",
+                "MongoDB",
+                "Vite",
+                "Vercel"
+            ]}
+          </TagCloud>
         </div>
       </section>
       <section className="flex flex-col min-h-full justify-between pb-8">
