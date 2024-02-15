@@ -50,7 +50,11 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-between">
-          <a href='mailto:timvernaeve@gmail.com'  className="flex h-fit items-center justify-center uppercase text-xl outline outline-1 rounded-full px-4 py-3">
+          <a 
+            href='mailto:timvernaeve@gmail.com' 
+             className="flex h-fit items-center justify-center uppercase text-xl outline outline-1 rounded-full px-4 py-3" 
+            target="_blank"
+            >
             get in touch
           </a>
           <div className="flex flex-col gap-4 text-mx font-bold items-end">

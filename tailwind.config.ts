@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -28,6 +29,19 @@ const config: Config = {
       'display': ['8rem', '1.2']
     }
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      const newUtilities = {
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '.no-scrollbar': {
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        },
+      };
+      addUtilities(newUtilities);
+    }),
+  ],
 };
 export default config;
