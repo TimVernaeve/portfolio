@@ -1,10 +1,11 @@
 'use client'
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useScramble } from "use-scramble";
 
 import { bounceAnimation, fadeInBottom, fadeInTop } from "@/helpers/animations";
+
+import Icon from "@/components/Icon";
 
 const Landing = () => {
   const { ref: ref1 } = useScramble({
@@ -53,12 +54,7 @@ const Landing = () => {
             // @ts-ignore
             variants={bounceAnimation}
           >
-            <Image
-              fill
-              src="/img/arrow-down.svg"
-              alt="arrow down"
-              sizes="32px"
-            />
+            <Icon name="arrow-down" className="w-8 h-8" />
           </motion.div>
           <span>scroll down</span>
         </div>

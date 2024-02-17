@@ -45,7 +45,7 @@
     {
       "name": "Donuttello",
       "slug": "donuttello",
-      "description": "WIP",
+      "description": "Donuttello was a client from school who required us to create a 3D-donut configurator along with a back-end platform to manage orders placed via the configurator. We accomplished this using Vue.js, Three.js, and Node.js (Express.js). I was responsible for developing the back-end and the admin pannel. According to the assignment requirements, we implemented a REST API and used MongoDB for the database.",
       "thumbnail": "https://picsum.photos/200/150",
       "images": [
         "https://picsum.photos/200/150",

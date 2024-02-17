@@ -8,6 +8,7 @@ interface WorkCardProps {
   title: string;
   image: string;
   lineDisabled?: boolean;
+  thumbnail?: string;
 }
 
 const textMotion = {
@@ -43,7 +44,7 @@ const hrMotion = {
   },
 };
 
-const Workcard = ({ title, image, lineDisabled }: WorkCardProps) => {
+const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
   return (
     <Link href={`/my-work/${title}`}>
       <motion.div

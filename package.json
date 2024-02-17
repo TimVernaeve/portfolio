@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:icons": "npx svg-sprite -s --symbol-dest public/img --symbol-sprite icons.svg src/assets/icons/*.svg"
   },
   "dependencies": {
     "@frank-mayer/react-tag-cloud": "^1.2.1",
