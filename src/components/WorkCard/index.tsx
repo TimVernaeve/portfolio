@@ -17,10 +17,12 @@ const textMotion = {
 
 const imageMotion = {
   rest: {
-    scale: 0
+    scale: 0,
+    opacity: 0
   },
   hover: {
-    scale: 1
+    scale: 1,
+    opacity: 1
   }
 
 }

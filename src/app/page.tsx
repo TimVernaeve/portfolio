@@ -51,7 +51,7 @@ export default function Home() {
       <section className="grid min-h-full grid-cols-12 gap-x-4 content-center">
         <div className="flex flex-col h-fit col-span-6 gap-8">
           <div className="relative aspect-[16/12]">
-            <Image className="rounded-xl z-50" fill src="/img/foto-tim-3.png" alt="Profile Picture" />
+            <Image className="rounded-xl z-50" fill src="/img/foto-tim.webp" alt="Profile Picture" />
             <div className="absolute animate-pulse-light z-40 w-full h-full rounded-full top-0 left-0"></div>
           </div>
           <p className="text-l font-light">
