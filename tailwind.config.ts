@@ -9,11 +9,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      height: {
+        'img': '31.25rem',
       },
+      dropShadow: {
+        'img': '16px 16px 12px rgba(143, 30, 98, 0.5)'
+      },
+      colors: {
+        'off-black': '#111111',
+      },
+      animation: {
+        'pulse-light': 'pulse-light 2s infinite'
+      }
     },
     fontFamily: {
       'body': ['Manrope', 'system-ui']

@@ -12,3 +12,21 @@ body, html {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@keyframes pulse-light {
+  0%{
+    -webkit-box-shadow: 0px 0px 24px 0px #621f4685;
+    -moz-box-shadow: 0px 0px 24px 0px #621f4685;
+    box-shadow: 0px 0px 24px 0px #621f4685;
+  }
+  50%{
+    -webkit-box-shadow: 0px 0px 12px 0px #621f4685;
+    -moz-box-shadow: 0px 0px 12px 0px #621f4685;
+    box-shadow: 0px 0px 12px 0px #621f4685;
+  }
+  100%{
+    -webkit-box-shadow: 0px 0px 24px 0px #621f4685;
+    -moz-box-shadow: 0px 0px 24px 0px #621f4685;
+    box-shadow: 0px 0px 24px 0px #621f4685;
+  }
+}
