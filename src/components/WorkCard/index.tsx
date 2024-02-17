@@ -1,51 +1,90 @@
-import Image from "next/image"
-import { motion } from "framer-motion"
+'use client';
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface WorkCardProps {
-    title: string;
-    image: string;
+  title: string;
+  image: string;
+  lineDisabled?: boolean;
 }
 
 const textMotion = {
   rest: {
-    x: 0
+    x: 0,
+    transition: { ease: "linear" },
   },
   hover: {
-    x: 32
-  }
-}
+    x: 32,
+    transition: { ease: "linear", duration: 0.15 },
+  },
+};
 
 const imageMotion = {
   rest: {
     scale: 0,
-    opacity: 0
+    opacity: 0,
   },
   hover: {
     scale: 1,
-    opacity: 1
-  }
+    opacity: 1,
+  },
+};
 
-}
+const hrMotion = {
+  initial: {
+    width: 0,
+    transition: { ease: "linear", duration: 0.5 },
+  },
+  inView: {
+    width: "100%",
+    transition: { ease: "linear", duration: 0.5 },
+  },
+};
 
-const Workcard = ({title, image}: WorkCardProps) => {
-    return (
-      <motion.a
-      initial="rest"
-      whileHover="hover"
-      href=''
-      className="flex justify-between items-center py-8 group box-border border border-l-0 border-r-0 border-t-1 border-b-1 border-neutral-400"
-    >
-      <motion.span
-        variants={textMotion}
-        className="font-bold uppercase text-xxl"
+const Workcard = ({ title, image, lineDisabled }: WorkCardProps) => {
+  return (
+    <Link href={`/my-work/${title}`}>
+      <motion.div
+        initial="rest"
+        whileHover="hover"
+        className="flex flex-col box-border"
       >
-        {title}
-      </motion.span>
-      <motion.div variants={imageMotion} className="relative w-52 h-36">
-        <Image className="cover" fill src={image} alt="bla" />
-      </motion.div>  
-    </motion.a>
-    )
-}
+        {!lineDisabled && (
+          <motion.hr
+            className="w-full border-t-2 border-neutral-400 box-border"
+            variants={hrMotion}
+            initial="initial"
+            whileInView="inView"
+          />
+        )}
+        <div className="flex justify-between items-center py-8 box-border">
+          <motion.span
+            variants={textMotion}
+            className="font-bold uppercase text-xxl"
+          >
+            {title}
+          </motion.span>
+          <motion.div variants={imageMotion} className="relative w-52 h-36">
+            <Image
+              className="cover"
+              fill
+              src={image}
+              alt="bla"
+              sizes="100% 100%"
+            />
+          </motion.div>
+        </div>
+        <motion.hr
+          className="w-full border-t-2 border-neutral-400 box-border"
+          variants={hrMotion}
+          initial="initial"
+          whileInView="inView"
+        />
+      </motion.div>
+    </Link>
+  );
+};
 
-export default Workcard
+export default Workcard;
