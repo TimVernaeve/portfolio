@@ -30,25 +30,27 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         <Link href="/">Tim Vernaeve</Link>
       </motion.div>
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-x-4 ">
-        <div className="flex flex-col gap-4 col-span-6">
-          <h1 className="font-bold uppercase text-xl sm:text-xxl">
-            {project.name}
-          </h1>
-          <div className="flex gap-4">
-            {project.tags.map((tag, key) => (
-              <span
-                className="text-xs font-bold outline outline-1 outline-white rounded-full px-2 py-1 box-border"
-                key={key}
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="flex flex-col gap-8 col-span-6">
+          <div className="flex flex-col gap-1">
+            <h1 className="font-bold uppercase text-xl sm:text-xxl">
+              {project.name}
+            </h1>
+            <div className="flex gap-4">
+              {project.tags.map((tag, key) => (
+                <span
+                  className="text-xs font-bold border-[0.5px] border-white rounded-full px-2 py-1 box-border"
+                  key={key}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-8 h-fit">
             <a
               href={project.link}
               target="_blank"
-              className="flex gap-4 h-fit w-fit items-center justify-center uppercase text-xs outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+              className="flex gap-4 h-fit w-fit box-border items-center justify-center uppercase text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to website
               <Icon className="w-6 h-6" name='internet'/>
@@ -56,15 +58,17 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             <a
               href={project.github}
               target="_blank"
-              className="flex gap-4 h-fit w-fit items-center justify-center uppercase text-xs outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+              className="flex gap-4 h-fit w-fit box-border items-center justify-center uppercase text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to github
               <Icon className="w-6 h-6" name='github'/>
             </a>
           </div>
-          {paragraphs.map((paragraph, index) => (
-            <p className="text-m" key={index}>{paragraph}</p>
-          ))}
+          <div className="flex flex-col gap-4 pb-8">
+            {paragraphs.map((paragraph, index) => (
+              <p className="text-m" key={index}>{paragraph}</p>
+            ))}
+          </div>
           <Link
             href="/"
             className="flex gap-4 h-fit w-fit items-center justify-center uppercase text-s outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"

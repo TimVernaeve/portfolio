@@ -57,9 +57,7 @@
       "images": [
         "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256811/portfolio/donuttello/landing_mhhc8j.png",
         "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256811/portfolio/donuttello/creator_vfpxpe.png",
-        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256812/portfolio/donuttello/login_nlj6ml.png",
-        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256810/portfolio/donuttello/admin_lvom1n.png",
-        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256810/portfolio/donuttello/cart_ol4tbt.png"
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256812/portfolio/donuttello/login_nlj6ml.png"
       ],
       "tags": [
         "Vue.js",
