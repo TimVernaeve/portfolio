@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+import { useMediaQuery } from '@mantine/hooks';
+
 interface WorkCardProps {
   title: string;
   image: string;
@@ -45,11 +47,13 @@ const hrMotion = {
 };
 
 const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
+  const isMobile = useMediaQuery('(max-width: 640px)');
+
   return (
     <Link href={`/my-work/${title}`}>
       <motion.div
-        initial="rest"
-        whileHover="hover"
+        initial={isMobile ? "" : "rest" }
+        whileHover={isMobile ? "" : "hover"}
         className="flex flex-col box-border"
       >
         {!lineDisabled && (
@@ -60,19 +64,19 @@ const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
             whileInView="inView"
           />
         )}
-        <div className="flex justify-between items-center py-8 box-border">
+        <div className="flex justify-between items-center sm:py-8 box-border">
           <motion.span
             variants={textMotion}
-            className="font-bold uppercase text-xxl"
+            className="font-bold uppercase text-l sm:text-xxl"
           >
             {title}
           </motion.span>
           <motion.div variants={imageMotion} className="relative w-52 h-36">
             <Image
-              className="cover"
+              className="cover hidden md:block"
               fill
               src={image}
-              alt="bla"
+              alt={title}
               sizes="100% 100%"
             />
           </motion.div>

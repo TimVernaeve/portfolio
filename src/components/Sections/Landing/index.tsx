@@ -1,4 +1,6 @@
-'use client'
+"use client";
+
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 import { useScramble } from "use-scramble";
@@ -28,37 +30,39 @@ const Landing = () => {
 
   return (
     <section className="flex flex-col min-h-screen justify-between p-8">
-      <motion.span
+      <motion.div
         className="text-xl"
         initial="hidden"
         animate="visible"
         variants={fadeInTop}
       >
-        Tim Vernaeve
-      </motion.span>
+        <Link href="/">Tim Vernaeve</Link>
+      </motion.div>
       <div>
-        <h1 className="font-bold text-display" ref={ref1} />
-        <h1 className="font-bold text-display" ref={ref2} />
+        <h1 className="font-bold text-xxl md:text-display" ref={ref1} />
+        <h1 className="font-bold text-xxl md:text-display" ref={ref2} />
       </div>
       <motion.div
-        className="flex justify-between text-m"
+        className="w-full text-m flex items-center justify-start"
         initial="hidden"
         animate="visible"
         variants={fadeInBottom}
       >
-        <div className="flex gap-4">
-          <motion.div
-            className="relative w-8 h-8"
-            initial="up"
-            animate="down"
-            // @ts-ignore
-            variants={bounceAnimation}
-          >
-            <Icon name="arrow-down" className="w-8 h-8" />
-          </motion.div>
-          <span>scroll down</span>
+        <div className="w-fit sm:w-full flex flex-col-reverse sm:flex-row gap-8 sm:gap-0 items-start justify-between">
+          <div className="flex gap-4">
+            <motion.div
+              className="relative w-8 h-8"
+              initial="up"
+              animate="down"
+              // @ts-ignore
+              variants={bounceAnimation}
+            >
+              <Icon name="arrow-down" className="w-8 h-8" />
+            </motion.div>
+            <span className="uppercase">scroll down</span>
+          </div>
+          <span className="uppercase">open to work</span>
         </div>
-        <span className="uppercase">open to work</span>
       </motion.div>
     </section>
   );

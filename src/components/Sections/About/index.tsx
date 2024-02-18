@@ -1,15 +1,18 @@
 'use client'
 
 import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import { useScramble } from "use-scramble";
+import { useMediaQuery } from '@mantine/hooks';
 
 import { fadeInLeft, fadeInRight } from "@/helpers/animations";
 
 const About = () => {
+  const isMobile = useMediaQuery('(max-width: 640px)');
+
   return (
-    <section className="grid min-h-screen grid-cols-12 gap-x-4 content-center p-8">
+    <section className="flex flex-col gap-8 xl:grid h-fit xl:min-h-screen xl:grid-cols-12 xl:gap-x-4 content-center p-8">
       <motion.div
         className="flex flex-col h-fit col-span-6 gap-8"
         initial="hidden"
@@ -36,7 +39,7 @@ const About = () => {
         </p>
       </motion.div>
       <motion.div
-        className="h-fit col-start-8 col-span-5 flex flex-col items-end gap-8"
+        className="h-fit col-start-8 col-span-5 flex flex-col items-center xl:items-end gap-8"
         initial="hidden"
         whileInView="visible"
         variants={fadeInRight}
@@ -44,7 +47,7 @@ const About = () => {
         <h2 className="uppercase text-l">my stack</h2>
         <TagCloud
           options={(w: Window & typeof globalThis): TagCloudOptions => ({
-            radius: Math.min(600, w.innerWidth, w.innerHeight) / 2,
+            radius: isMobile ? Math.min(300, w.innerWidth, w.innerHeight) / 2 : Math.min(600, w.innerWidth, w.innerHeight) / 2,
             maxSpeed: "fast",
             initSpeed: "normal",
             keep: false,

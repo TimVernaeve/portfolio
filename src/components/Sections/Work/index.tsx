@@ -5,8 +5,9 @@ import projectsJson from "@/assets/projects.json";
 import { ProjectTypes } from "@/types/projects";
 
 import { motion } from "framer-motion";
+import { useMediaQuery } from '@mantine/hooks';
 
-import { footerAnimation } from "@/helpers/animations";
+import { fadeInBottom } from "@/helpers/animations";
 
 import Workcard from "@/components/WorkCard";
 import Icon from "@/components/Icon";
@@ -14,10 +15,12 @@ import Icon from "@/components/Icon";
 const Work = () => {
   const allProjects: ProjectTypes[] = Object.values(projectsJson).flat().slice().reverse();
 
+  const isMobile = useMediaQuery('(max-width: 640px)');
+
   return (
-    <section className="flex flex-col min-h-screen justify-between pb-8 p-8">
+    <section className="flex flex-col h-fit gap-8 sm:gap-0 sm:min-h-screen justify-between pb-8 p-8">
       <div className="flex flex-col gap-8">
-        <h2 className="uppercase text-l">my work</h2>
+        <h2 className="uppercase text-m sm:text-l">selected works</h2>
         <div>
           {allProjects.map((project: ProjectTypes, index) => (
             <Workcard key={index} title={project.slug} image={project.thumbnail} lineDisabled={index > 0 ?? true} />
@@ -25,19 +28,19 @@ const Work = () => {
         </div>
       </div>
       <motion.div
-        initial="out"
-        whileInView="in"
-        variants={footerAnimation}
-        className="flex justify-between"
+        initial={isMobile ? "visible" : "hidden"}
+        whileInView={"visible"}
+        variants={fadeInBottom}
+        className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between"
       >
         <a
           href="mailto:timvernaeve@gmail.com"
-          className="flex h-fit items-center justify-center uppercase text-xl outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+          className="flex h-fit items-center justify-center uppercase w-full sm:w-fit text-s sm:text-xl outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
           target="_blank"
         >
           get in touch
         </a>
-        <div className="flex flex-col gap-4 text-mx font-bold items-end">
+        <div className="flex flex-col gap-4 text-m sm:text-mx font-bold items-end">
           <a
             href="https://www.linkedin.com/in/tim-vernaeve-44ba99203/"
             className="flex gap-8 items-center"

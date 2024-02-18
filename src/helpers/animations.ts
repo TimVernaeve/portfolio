@@ -7,27 +7,15 @@ export const bounceAnimation = {
       repeatType: "reverse",
       duration: 0.5,
       ease: "easeInOut",
+      delay: 0.8
     },
-  },
-};
-
-export const footerAnimation = {
-  out: {
-    y: 32,
-    opacity: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-  in: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
 export const fadeInLeft = {
   hidden: {
     opacity: 0,
-    x: -100,
+    x: -32,
     transition: { duration: 0.8, ease: "easeOut" },
   },
   visible: {
@@ -40,7 +28,7 @@ export const fadeInLeft = {
 export const fadeInRight = {
   hidden: {
     opacity: 0,
-    x: 100,
+    x: 32,
     transition: { duration: 0.8, ease: "easeOut" },
   },
   visible: {
@@ -53,7 +41,7 @@ export const fadeInRight = {
 export const fadeInBottom = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 32,
     transition: { duration: 0.8, ease: "easeOut" },
   },
   visible: {

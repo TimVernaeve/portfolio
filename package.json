@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@frank-mayer/react-tag-cloud": "^1.2.1",
+    "@mantine/core": "^7.5.3",
+    "@mantine/hooks": "^7.5.3",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
     "react": "^18",
