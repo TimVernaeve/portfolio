@@ -29,7 +29,7 @@ const Landing = () => {
   });
 
   return (
-    <section className="flex flex-col min-h-screen justify-between p-8">
+    <section className="flex flex-col min-h-full justify-between p-8 box-border">
       <motion.div
         className="text-xl"
         initial="hidden"
