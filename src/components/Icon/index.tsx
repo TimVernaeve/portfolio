@@ -3,7 +3,8 @@ import React from 'react'
 const icons = [
   'arrow-down',
   'linkedin',
-  'github'
+  'github',
+  'internet'
 ] as const
 
 export type Icons = typeof icons[number]

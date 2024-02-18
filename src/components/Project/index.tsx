@@ -43,6 +43,24 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               </span>
             ))}
           </div>
+          <div className="flex gap-8">
+            <a
+              href={project.link}
+              target="_blank"
+              className="flex gap-4 h-fit w-fit items-center justify-center uppercase text-xs outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+            >
+              link to website
+              <Icon className="w-6 h-6" name='internet'/>
+            </a>
+            <a
+              href={project.github}
+              target="_blank"
+              className="flex gap-4 h-fit w-fit items-center justify-center uppercase text-xs outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+            >
+              link to github
+              <Icon className="w-6 h-6" name='github'/>
+            </a>
+          </div>
           {paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}

@@ -16,7 +16,8 @@
         "Next.js",
         "TailwindCSS"
       ],
-      "link": "timvernaeve.be",
+      "link": "https://timvernaeve.be",
+      "github": "https://github.com/TimVernaeve/portfolio",
       "date": "2024-17-02"
     }
   ],
@@ -38,6 +39,7 @@
         "PostCSS"
       ],
       "link": "https://app.buurtplanr.com/",
+      "github": "https://github.com/TimVernaeve/buurtplanr",
       "date": "2023-16-06"
     }
   ],
@@ -58,6 +60,7 @@
         "Three.js"
       ],
       "link": "https://donuttello-digipond.vercel.app/",
+      "github": "https://github.com/TimVernaeve/donutello",
       "date": "2022-12-01"
     }
   ]

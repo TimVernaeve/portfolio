@@ -6,6 +6,7 @@ export interface ProjectTypes {
     images: string[],
     tags: string[],
     link: string,
+    github: string,
     date: string
 
 }
