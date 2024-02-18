@@ -32,10 +32,10 @@ const About = () => {
         </div>
         <p className="text-[1.8rem] font-light leading-8">
           Throughout the years I have developed a passion for everything related
-          to design and web development. Being able to practice this passion on
-          a professional level is a dream of mine. I’m rational and precise. I
+          to web development. Being able to practice this passion on
+          a professional level is a dream of mine. I
           try to non-stop develop my skills and hope to learn many more things
-          in the future.
+          in the future. Building structured, clean and efficient code is what I strive for.
         </p>
       </motion.div>
       <motion.div

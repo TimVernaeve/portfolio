@@ -3,7 +3,7 @@
     {
       "name": "Portfolio",
       "slug": "portfolio",
-      "description": "WIP",
+      "description": "Welcome to my personal digital gallery, a carefully curated portfolio that encapsulates my journey, skills, and passion for web development. This portfolio site is not just a collection of projects; it's a reflection of my dedication to continuous learning and the evolution of my craft. In this particular project I took the opportunity to learn Tailwind CSS which has become a standard in the industry.",
       "thumbnail": "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/landing_gqxew4.png",
       "images": [
         "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/landing_gqxew4.png",
@@ -14,7 +14,7 @@
       "tags": [
         "React",
         "Next.js",
-        "TailwindCSS"
+        "Tailwind CSS"
       ],
       "link": "https://timvernaeve.be",
       "github": "https://github.com/TimVernaeve/portfolio",
@@ -25,7 +25,7 @@
     {
       "name": "Buurtplanr",
       "slug": "buurtplanr",
-      "description": "Buurtplanr was our thesis project, which aimed to allow local townships to invite their citizens to co-create the urban planning of their towns. This was achieved through an online platform where citizens could create their own vision of what the project should look like using a 3D builder. I was responsible for the business, design, and technical setup as well as the follow-up of the project. This included creating the repository, setting up Storybook, Style Dictionary, PostCSS, ESLint, and TypeScript configuration. \n I also encouraged that the rest of the team followed the predefined standards to make the code maintainable and readable for all team members. Additionally I also assisted in creating more complicated components when my team struggled since I had more experience with react and typescript. Our tech stack was: Next.js, Three.js and Node.js (Express.js).",
+      "description": "Buurtplanr was our thesis project, which aimed to allow local townships to invite their citizens to co-create the urban planning of their towns. This was achieved through an online platform where citizens could create their own vision of what the project should look like using a 3D builder. I was responsible for the business, design, and technical setup as well as the follow-up of the project. This included creating the repository, setting up Storybook, Style Dictionary, PostCSS, ESLint, and TypeScript configuration. \n I also encouraged that the rest of the team followed the predefined standards to make the code maintainable and readable for all team members. Additionally I also assisted in creating more complicated components when my team struggled since I had more experience with react and typescript. Our tech stack was: Next.js, Three.js and Node.js (Express.js). \n Note that the current live website no longer fully functions due to that we got rid of the google cloud account since it would have kept billing us.",
       "thumbnail": "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256799/portfolio/buurtplanr/dashboard_kczqve.png",
       "images": [
         "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256799/portfolio/buurtplanr/dashboard_kczqve.png",
@@ -38,7 +38,10 @@
       "tags": [
         "React",
         "Next.js",
-        "PostCSS"
+        "PostCSS",
+        "Three.js",
+        "Node.js",
+        "MongoDB"
       ],
       "link": "https://app.buurtplanr.com/",
       "github": "https://github.com/TimVernaeve/buurtplanr",
@@ -60,7 +63,9 @@
       ],
       "tags": [
         "Vue.js",
-        "Three.js"
+        "Three.js",
+        "Node.js",
+        "MongoDB"
       ],
       "link": "https://donuttello-digipond.vercel.app/",
       "github": "https://github.com/TimVernaeve/donutello",
