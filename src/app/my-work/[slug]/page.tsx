@@ -3,6 +3,7 @@ import projectsJson from "@/assets/projects.json";
 import { ProjectTypes } from "@/types/projects";
 
 import ProjectDetails from "@/components/Project";
+import { notFound } from "next/navigation";
 interface ProjectProps {
   params: {
     slug: string;
@@ -31,7 +32,7 @@ const Project = ({ params }: ProjectProps) => {
   return (
     <main className="font-body flex h-full flex-col">
       {projectFound && <ProjectDetails project={project as ProjectTypes} />}
-      {!projectFound && <h1>Project not found: {params.slug}</h1>}
+      {!projectFound && notFound()}
     </main>
   );
 };
