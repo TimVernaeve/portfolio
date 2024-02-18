@@ -4,12 +4,12 @@
       "name": "Portfolio",
       "slug": "portfolio",
       "description": "WIP",
-      "thumbnail": "https://picsum.photos/200/150",
+      "thumbnail": "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/landing_gqxew4.png",
       "images": [
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150"
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/landing_gqxew4.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/work_baq9bo.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/about_fbhnxf.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256783/portfolio/portfolio/project-page_iw2rky.png"
       ],
       "tags": [
         "React",
@@ -26,12 +26,14 @@
       "name": "Buurtplanr",
       "slug": "buurtplanr",
       "description": "Buurtplanr was our thesis project, which aimed to allow local townships to invite their citizens to co-create the urban planning of their towns. This was achieved through an online platform where citizens could create their own vision of what the project should look like using a 3D builder. I was responsible for the business, design, and technical setup as well as the follow-up of the project. This included creating the repository, setting up Storybook, Style Dictionary, PostCSS, ESLint, and TypeScript configuration. \n I also encouraged that the rest of the team followed the predefined standards to make the code maintainable and readable for all team members. Additionally I also assisted in creating more complicated components when my team struggled since I had more experience with react and typescript. Our tech stack was: Next.js, Three.js and Node.js (Express.js).",
-      "thumbnail": "https://picsum.photos/200/150",
+      "thumbnail": "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256799/portfolio/buurtplanr/dashboard_kczqve.png",
       "images": [
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150"
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256799/portfolio/buurtplanr/dashboard_kczqve.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256799/portfolio/buurtplanr/login_qnjm0g.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256798/portfolio/buurtplanr/project_ioqckb.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256798/portfolio/buurtplanr/builder_cjlyft.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256800/portfolio/buurtplanr/builder-setup_krln9r.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256798/portfolio/buurtplanr/admin_qmkkup.png"
       ],
       "tags": [
         "React",
@@ -48,12 +50,13 @@
       "name": "Donuttello",
       "slug": "donuttello",
       "description": "Donuttello was a client from school who required us to create a 3D-donut configurator along with a back-end platform to manage orders placed via the configurator. We accomplished this using Vue.js, Three.js, and Node.js (Express.js). I was responsible for developing the back-end and the admin pannel. According to the assignment requirements, we implemented a REST API and used MongoDB for the database.",
-      "thumbnail": "https://picsum.photos/200/150",
+      "thumbnail": "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256811/portfolio/donuttello/creator_vfpxpe.png",
       "images": [
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150",
-        "https://picsum.photos/200/150"
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256811/portfolio/donuttello/landing_mhhc8j.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256811/portfolio/donuttello/creator_vfpxpe.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256812/portfolio/donuttello/login_nlj6ml.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256810/portfolio/donuttello/admin_lvom1n.png",
+        "https://res.cloudinary.com/dgypufy9k/image/upload/v1708256810/portfolio/donuttello/cart_ol4tbt.png"
       ],
       "tags": [
         "Vue.js",

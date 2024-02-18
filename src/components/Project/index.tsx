@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import ModalImage from "react-modal-image";
 
 import { fadeInTop } from "@/helpers/animations";
 
@@ -62,7 +63,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </a>
           </div>
           {paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p className="text-m" key={index}>{paragraph}</p>
           ))}
           <Link
             href="/"
@@ -74,18 +75,17 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             back to homepage
           </Link>
         </div>
-        <div className="col-start-8 col-span-5">
+        <div className="col-start-8 col-span-5 flex flex-col gap-2">
           {project.images.map((image, key) => (
             <div
-              className="relative w-full aspect-video lg:w-[600px] lg:h-[600px]"
+              className="w-full"
               key={key}
             >
-              <Image
-                fill
-                src={image}
+              <ModalImage
+                small={image}
+                large={image}
                 alt={project.name}
-                sizes="200px"
-                className="cover"
+                className="object-cover"
               />
             </div>
           ))}
