@@ -35,7 +35,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             <h1 className="font-bold uppercase text-xl sm:text-xxl">
               {project.name}
             </h1>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               {project.tags.map((tag, key) => (
                 <span
                   className="text-xs font-bold border-[0.5px] border-white rounded-full px-2 py-1 box-border"
@@ -46,11 +46,11 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               ))}
             </div>
           </div>
-          <div className="flex gap-8 h-fit">
+          <div className="flex gap-8 h-fit flex-col sm:flex-row">
             <a
               href={project.link}
               target="_blank"
-              className="flex gap-4 h-fit w-fit box-border items-center justify-center uppercase text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+              className="flex gap-4 h-fit w-full sm:w-fit box-border items-center justify-center uppercase text-s sm:text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to website
               <Icon className="w-6 h-6" name='internet'/>
@@ -58,7 +58,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             <a
               href={project.github}
               target="_blank"
-              className="flex gap-4 h-fit w-fit box-border items-center justify-center uppercase text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
+              className="flex gap-4 h-fit w-full sm:w-fit box-border items-center justify-center uppercase text-s sm:text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to github
               <Icon className="w-6 h-6" name='github'/>

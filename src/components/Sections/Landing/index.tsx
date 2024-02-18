@@ -61,7 +61,7 @@ const Landing = () => {
             </motion.div>
             <span className="uppercase">scroll down</span>
           </div>
-          <span className="uppercase">open to work</span>
+          <span className="uppercase hidden sm:block">open to work</span>
         </div>
       </motion.div>
     </section>
