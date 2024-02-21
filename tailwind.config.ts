@@ -20,6 +20,9 @@ const config: Config = {
       },
       animation: {
         'pulse-light': 'pulse-light 2s infinite'
+      },
+      screens: {
+        "3xl": "1920px",
       }
     },
     fontFamily: {

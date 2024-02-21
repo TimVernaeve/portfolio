@@ -64,7 +64,7 @@ const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
             whileInView="inView"
           />
         )}
-        <div className="flex justify-between items-center sm:py-8 box-border">
+        <div className="flex justify-between items-center sm:py-2 3xl:py-8 box-border">
           <motion.span
             variants={textMotion}
             className="font-bold uppercase text-l sm:text-xxl"
