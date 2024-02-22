@@ -1,21 +1,16 @@
-'use client'
-
 import projectsJson from "@/assets/projects.json";
 
 import { ProjectTypes } from "@/types/projects";
 
-import { motion } from "framer-motion";
-import { useMediaQuery } from '@mantine/hooks';
-
-import { fadeInBottom } from "@/helpers/animations";
-
 import Workcard from "@/components/WorkCard";
 import Icon from "@/components/Icon";
+import AnimationContainer from "@/components/AnimationContainer";
 
 const Work = () => {
-  const allProjects: ProjectTypes[] = Object.values(projectsJson).flat().slice().reverse();
-
-  const isMobile = useMediaQuery('(max-width: 640px)');
+  const allProjects: ProjectTypes[] = Object.values(projectsJson)
+    .flat()
+    .slice()
+    .reverse();
 
   return (
     <section className="flex flex-col h-fit gap-8 sm:gap-0 sm:min-h-screen justify-between pb-8 p-8">
@@ -23,14 +18,20 @@ const Work = () => {
         <h2 className="uppercase text-m sm:text-l">selected works</h2>
         <div>
           {allProjects.map((project: ProjectTypes, index) => (
-            <Workcard key={index} title={project.slug} image={project.thumbnail} lineDisabled={index > 0 ?? true} />
+            <Workcard
+              key={index}
+              title={project.slug}
+              image={project.thumbnail}
+              lineDisabled={index > 0 ?? true}
+            />
           ))}
         </div>
       </div>
-      <motion.div
-        initial={isMobile ? "visible" : "hidden"}
-        whileInView={"visible"}
-        variants={fadeInBottom}
+      <AnimationContainer
+        mobile
+        initial="hidden"
+        whileInView="visible"
+        variants="bottom"
         className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between"
       >
         <a
@@ -58,7 +59,7 @@ const Work = () => {
             <Icon name="github" className="w-8 h-8" />
           </a>
         </div>
-      </motion.div>
+      </AnimationContainer>
     </section>
   );
 };

@@ -63,3 +63,36 @@ export const fadeInTop = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 };
+
+export const imageMotion = {
+  rest: {
+    scale: 0,
+    opacity: 0,
+  },
+  hover: {
+    scale: 1,
+    opacity: 1,
+  },
+}
+
+export const textMotion = {
+  rest: {
+    x: 0,
+    transition: { ease: "linear" },
+  },
+  hover: {
+    x: 32,
+    transition: { ease: "linear", duration: 0.15 },
+  },
+};
+
+export const hrMotion = {
+  hidden: {
+    width: 0,
+    transition: { ease: "linear", duration: 0.5 },
+  },
+  visible: {
+    width: "100%",
+    transition: { ease: "linear", duration: 0.5 },
+  },
+};

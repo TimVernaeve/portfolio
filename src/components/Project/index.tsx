@@ -1,16 +1,9 @@
-"use client";
-
-import Image from "next/image";
-
-import { motion } from "framer-motion";
-import ModalImage from "react-modal-image";
-
-import { fadeInTop } from "@/helpers/animations";
-
 import { ProjectTypes } from "@/types/projects";
 import Link from "next/link";
 
 import Icon from "@/components/Icon";
+import Nav from "@/components/Nav";
+import ProjectImages from "@/components/Project/ProjectImages";
 
 interface ProjectDetailsProps {
   project: ProjectTypes;
@@ -21,14 +14,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
   return (
     <section className="flex flex-col min-h-screen gap-8 pb-8 p-8">
-      <motion.div
-        className="text-xl"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInTop}
-      >
-        <Link href="/">Tim Vernaeve</Link>
-      </motion.div>
+      <Nav />
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-x-4 ">
         <div className="flex flex-col gap-8 col-span-6">
           <div className="flex flex-col gap-1">
@@ -53,7 +39,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               className="flex gap-4 h-fit w-full sm:w-fit box-border items-center justify-center uppercase text-s sm:text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to website
-              <Icon className="w-6 h-6" name='internet'/>
+              <Icon className="w-6 h-6" name="internet" />
             </a>
             <a
               href={project.github}
@@ -61,12 +47,14 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
               className="flex gap-4 h-fit w-full sm:w-fit box-border items-center justify-center uppercase text-s sm:text-xs border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white"
             >
               link to github
-              <Icon className="w-6 h-6" name='github'/>
+              <Icon className="w-6 h-6" name="github" />
             </a>
           </div>
           <div className="flex flex-col gap-4 pb-8">
             {paragraphs.map((paragraph, index) => (
-              <p className="text-m" key={index}>{paragraph}</p>
+              <p className="text-m" key={index}>
+                {paragraph}
+              </p>
             ))}
           </div>
           <Link
@@ -79,21 +67,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             back to homepage
           </Link>
         </div>
-        <div className="col-start-8 col-span-5 flex flex-col gap-2">
-          {project.images.map((image, key) => (
-            <div
-              className="w-full"
-              key={key}
-            >
-              <ModalImage
-                small={image}
-                large={image}
-                alt={project.name}
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <ProjectImages images={project.images} alt={project.name} />
       </div>
     </section>
   );

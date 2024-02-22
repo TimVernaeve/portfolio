@@ -1,11 +1,7 @@
-'use client';
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { useMediaQuery } from '@mantine/hooks';
-
+import AnimationContainer from "@/components/AnimationContainer";
 interface WorkCardProps {
   title: string;
   image: string;
@@ -13,65 +9,33 @@ interface WorkCardProps {
   thumbnail?: string;
 }
 
-const textMotion = {
-  rest: {
-    x: 0,
-    transition: { ease: "linear" },
-  },
-  hover: {
-    x: 32,
-    transition: { ease: "linear", duration: 0.15 },
-  },
-};
-
-const imageMotion = {
-  rest: {
-    scale: 0,
-    opacity: 0,
-  },
-  hover: {
-    scale: 1,
-    opacity: 1,
-  },
-};
-
-const hrMotion = {
-  initial: {
-    width: 0,
-    transition: { ease: "linear", duration: 0.5 },
-  },
-  inView: {
-    width: "100%",
-    transition: { ease: "linear", duration: 0.5 },
-  },
-};
-
-const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
-  const isMobile = useMediaQuery('(max-width: 640px)');
-
+const Workcard = ({ title, image, lineDisabled }: WorkCardProps) => {
   return (
     <Link href={`/my-work/${title}`}>
-      <motion.div
-        initial={isMobile ? "" : "rest" }
-        whileHover={isMobile ? "" : "hover"}
+      <AnimationContainer
+        initial="rest"
+        whileHover="hover"
+        mobile
         className="flex flex-col box-border"
       >
         {!lineDisabled && (
-          <motion.hr
+          <AnimationContainer
             className="w-full border-t-2 border-neutral-400 box-border"
-            variants={hrMotion}
-            initial="initial"
-            whileInView="inView"
+            variants="hr"
+            initial="hidden"
+            whileInView="visible"
+            as="hr"
           />
         )}
         <div className="flex justify-between items-center sm:py-2 3xl:py-8 box-border">
-          <motion.span
-            variants={textMotion}
+          <AnimationContainer
+            as="span"
+            variants="text"
             className="font-bold uppercase text-l sm:text-xxl"
           >
             {title}
-          </motion.span>
-          <motion.div variants={imageMotion} className="relative w-52 h-36">
+          </AnimationContainer>
+          <AnimationContainer variants="image" className="relative w-52 h-36">
             <Image
               className="cover hidden md:block"
               fill
@@ -79,15 +43,16 @@ const Workcard = ({ title, thumbnail, image, lineDisabled }: WorkCardProps) => {
               alt={title}
               sizes="100% 100%"
             />
-          </motion.div>
+          </AnimationContainer>
         </div>
-        <motion.hr
+        <AnimationContainer
           className="w-full border-t-2 border-neutral-400 box-border"
-          variants={hrMotion}
-          initial="initial"
-          whileInView="inView"
+          variants="hr"
+          initial="hidden"
+          whileInView="visible"
+          as="hr"
         />
-      </motion.div>
+      </AnimationContainer>
     </Link>
   );
 };
