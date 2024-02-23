@@ -1,17 +1,18 @@
-import Link from "next/link";
-import AnimationContainer from "@/components/AnimationContainer";
+import Link from 'next/link'
+
+import AnimationContainer from '@/components/AnimationContainer'
 
 const Nav = () => {
   return (
     <AnimationContainer
-      className="text-xl"
-      initial="hidden"
-      animate="visible"
-      variants="top"
+      className='text-xl'
+      initial='hidden'
+      animate='visible'
+      variants='top'
     >
-      <Link href="/">Tim Vernaeve</Link>
+      <Link href='/'>Tim Vernaeve</Link>
     </AnimationContainer>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

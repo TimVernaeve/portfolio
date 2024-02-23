@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import "@/app/globals.css";
+import type { Metadata } from 'next'
+import '@/app/globals.css'
 
 export const metadata: Metadata = {
-  title: "Tim Vernaeve",
-  description: "Creative Web Developer",
-};
+  title: 'Tim Vernaeve',
+  description: 'Creative Web Developer'
+}
 
-export default function RootLayout({
-  children,
+export default function RootLayout ({
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <main>{children}</main>
-  );
+  )
 }

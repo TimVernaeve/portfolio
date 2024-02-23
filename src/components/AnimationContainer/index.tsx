@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { Variants, motion } from "framer-motion";
-import { useMediaQuery } from "@mantine/hooks";
+import { useMediaQuery } from '@mantine/hooks'
+import { type Variants, motion } from 'framer-motion'
 
 import {
   bounceAnimation,
@@ -11,53 +11,53 @@ import {
   fadeInTop,
   imageMotion,
   textMotion,
-  hrMotion,
-} from "@/helpers/animations";
+  hrMotion
+} from '@/helpers/animations'
 
 interface BaseProps {
-  children?: React.ReactNode;
-  initial?: "up" | "hidden" | "rest" | "";
-  animate?: "down" | "visible";
-  whileInView?: "visible";
-  whileHover?: "hover" | "";
+  children?: React.ReactNode
+  initial?: 'up' | 'hidden' | 'rest' | ''
+  animate?: 'down' | 'visible'
+  whileInView?: 'visible'
+  whileHover?: 'hover' | ''
   variants?:
-    | "bounce"
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "image"
-    | "text"
-    | "hr";
-  className?: string;
-  mobile?: boolean;
+  | 'bounce'
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'image'
+  | 'text'
+  | 'hr'
+  className?: string
+  mobile?: boolean
 }
 
 type ContainerAsDiv = BaseProps &
-  Omit<
-    React.HTMLProps<HTMLDivElement>,
-    keyof BaseProps & {
-      as?: "div";
-    }
-  >;
+Omit<
+React.HTMLProps<HTMLDivElement>,
+keyof BaseProps & {
+  as?: 'div'
+}
+>
 
 type ContainerAsSpan = BaseProps &
-  Omit<
-    React.HTMLProps<HTMLSpanElement>,
-    keyof BaseProps & {
-      as: "span";
-    }
-  >;
+Omit<
+React.HTMLProps<HTMLSpanElement>,
+keyof BaseProps & {
+  as: 'span'
+}
+>
 
 type ContainerAsHr = BaseProps &
-  Omit<
-    React.HTMLProps<HTMLHRElement>,
-    keyof BaseProps & {
-      as: "hr";
-    }
-  >;
+Omit<
+React.HTMLProps<HTMLHRElement>,
+keyof BaseProps & {
+  as: 'hr'
+}
+>
 
-type AnimationContainerProps = ContainerAsDiv | ContainerAsSpan | ContainerAsHr;
+type AnimationContainerProps = ContainerAsDiv | ContainerAsSpan | ContainerAsHr
 
 const AnimationContainer = ({
   children,
@@ -70,49 +70,49 @@ const AnimationContainer = ({
   mobile = false,
   ...props
 }: AnimationContainerProps) => {
-  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isMobile = useMediaQuery('(max-width: 640px)')
 
-  let variantsValue;
+  let variantsValue
 
   switch (variants) {
-    case "top":
-      variantsValue = fadeInTop;
-      break;
-    case "bottom":
-      variantsValue = fadeInBottom;
-      break;
-    case "left":
-      variantsValue = fadeInLeft;
-      break;
-    case "right":
-      variantsValue = fadeInRight;
-      break;
-    case "bounce":
-      variantsValue = bounceAnimation;
-      break;
-    case "image":
-      variantsValue = imageMotion;
-      break;
-    case "text":
-      variantsValue = textMotion;
-      break;
-    case "hr":
-      variantsValue = hrMotion;
-      break;
+    case 'top':
+      variantsValue = fadeInTop
+      break
+    case 'bottom':
+      variantsValue = fadeInBottom
+      break
+    case 'left':
+      variantsValue = fadeInLeft
+      break
+    case 'right':
+      variantsValue = fadeInRight
+      break
+    case 'bounce':
+      variantsValue = bounceAnimation
+      break
+    case 'image':
+      variantsValue = imageMotion
+      break
+    case 'text':
+      variantsValue = textMotion
+      break
+    case 'hr':
+      variantsValue = hrMotion
+      break
   }
 
-  const { as } = props;
+  const { as } = props
 
-  const checkedInitial = mobile ? (isMobile ? "" : initial) : initial;
-  const checkedAnimate = mobile ? (isMobile ? "" : animate) : animate;
+  const checkedInitial = mobile ? (isMobile ? '' : initial) : initial
+  const checkedAnimate = mobile ? (isMobile ? '' : animate) : animate
   const checkedWhileInView = mobile
     ? isMobile
-      ? "visible"
+      ? 'visible'
       : whileInView
-    : whileInView;
-  const checkedWhileHover = mobile ? (isMobile ? "" : whileHover) : whileHover;
+    : whileInView
+  const checkedWhileHover = mobile ? (isMobile ? '' : whileHover) : whileHover
 
-  if (as === "hr") {
+  if (as === 'hr') {
     return (
       <motion.hr
         initial={checkedInitial}
@@ -121,10 +121,10 @@ const AnimationContainer = ({
         variants={variantsValue as Variants}
         className={className}
       />
-    );
+    )
   }
 
-  if (as === "span") {
+  if (as === 'span') {
     return (
       <motion.span
         initial={checkedInitial}
@@ -136,7 +136,7 @@ const AnimationContainer = ({
       >
         {children}
       </motion.span>
-    );
+    )
   }
 
   return (
@@ -150,7 +150,7 @@ const AnimationContainer = ({
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
-export default AnimationContainer;
+export default AnimationContainer

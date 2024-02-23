@@ -1,40 +1,40 @@
-import projectsJson from "@/assets/projects.json";
+import { notFound } from 'next/navigation'
 
-import { ProjectTypes } from "@/types/projects";
+import projectsJson from '@/assets/projects.json'
+import ProjectDetails from '@/components/Project'
+import { type ProjectTypes } from '@/types/projects'
 
-import ProjectDetails from "@/components/Project";
-import { notFound } from "next/navigation";
 interface ProjectProps {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }
 
 const Project = ({ params }: ProjectProps) => {
-  const { slug } = params;
+  const { slug } = params
 
-  let projectFound = false;
+  let projectFound = false
 
-  let project: ProjectTypes | undefined;
+  let project: ProjectTypes | undefined
 
   for (const year in projectsJson) {
-    if (projectsJson.hasOwnProperty(year)) {
+    if (Object.prototype.hasOwnProperty.call(projectsJson, year)) {
       project = projectsJson[year as keyof typeof projectsJson].find(
         (p) => p.slug === slug
-      );
+      )
       if (project) {
-        projectFound = true;
-        break;
+        projectFound = true
+        break
       }
     }
   }
 
   return (
-    <main className="flex h-full flex-col">
+    <main className='flex h-full flex-col'>
       {projectFound && <ProjectDetails project={project as ProjectTypes} />}
       {!projectFound && notFound()}
     </main>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project
