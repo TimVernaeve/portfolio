@@ -30,7 +30,7 @@ const Project = ({ params }: ProjectProps) => {
   }
 
   return (
-    <main className="font-body flex h-full flex-col">
+    <main className="flex h-full flex-col">
       {projectFound && <ProjectDetails project={project as ProjectTypes} />}
       {!projectFound && notFound()}
     </main>

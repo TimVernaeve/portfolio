@@ -10,7 +10,7 @@ import { fadeInTop } from "@/helpers/animations";
 
 const NotFoundPage = () => {
   return (
-    <main className="font-body flex h-full flex-col gap-8 box-border p-8">
+    <main className="flex h-full flex-col gap-8 box-border p-8">
       <motion.div
        className="text-xl"
         initial="hidden"

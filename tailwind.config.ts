@@ -25,9 +25,6 @@ const config: Config = {
         "3xl": "1920px",
       }
     },
-    fontFamily: {
-      'body': ['Manrope', 'system-ui']
-    },
     fontSize: {
       'xs': ['0.75rem', '1.2'],
       's': ['1rem', '1.2'],
