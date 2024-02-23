@@ -2,10 +2,12 @@ import AnimationContainer from '@/components/AnimationContainer'
 import HeroText from '@/components/HeroText'
 import Icon from '@/components/Icon'
 import Nav from '@/components/Nav'
+import { isMobile } from '@/helpers/isMobile'
 
 const Landing = () => {
   return (
     <section className='flex flex-col min-h-full justify-between p-8 box-border'>
+      <p>{isMobile().toString()}</p>
       <Nav />
       <HeroText />
       <AnimationContainer
