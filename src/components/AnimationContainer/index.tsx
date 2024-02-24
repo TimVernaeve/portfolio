@@ -14,21 +14,26 @@ import {
   hrMotion
 } from '@/helpers/animations'
 
+const variantNames = [
+  'bounce',
+  'top',
+  'bottom',
+  'left',
+  'right',
+  'image',
+  'text',
+  'hr'
+] as const
+
+export type VariantNames = typeof variantNames[number]
+
 interface BaseProps {
   children?: React.ReactNode
   initial?: 'up' | 'hidden' | 'rest' | ''
   animate?: 'down' | 'visible'
   whileInView?: 'visible'
   whileHover?: 'hover' | ''
-  variants?:
-  | 'bounce'
-  | 'top'
-  | 'bottom'
-  | 'left'
-  | 'right'
-  | 'image'
-  | 'text'
-  | 'hr'
+  variants?: VariantNames
   className?: string
   mobile?: boolean
 }
@@ -63,7 +68,7 @@ const AnimationContainer = ({
   children,
   initial,
   animate,
-  variants,
+  variants = 'top',
   className,
   whileInView,
   whileHover,
@@ -72,34 +77,18 @@ const AnimationContainer = ({
 }: AnimationContainerProps) => {
   const isMobile = useMediaQuery('(max-width: 640px)')
 
-  let variantsValue
-
-  switch (variants) {
-    case 'top':
-      variantsValue = fadeInTop
-      break
-    case 'bottom':
-      variantsValue = fadeInBottom
-      break
-    case 'left':
-      variantsValue = fadeInLeft
-      break
-    case 'right':
-      variantsValue = fadeInRight
-      break
-    case 'bounce':
-      variantsValue = bounceAnimation
-      break
-    case 'image':
-      variantsValue = imageMotion
-      break
-    case 'text':
-      variantsValue = textMotion
-      break
-    case 'hr':
-      variantsValue = hrMotion
-      break
+  const variantsMap = {
+    top: fadeInTop,
+    bottom: fadeInBottom,
+    left: fadeInLeft,
+    right: fadeInRight,
+    bounce: bounceAnimation,
+    image: imageMotion,
+    text: textMotion,
+    hr: hrMotion
   }
+
+  const variantsValue = variantsMap[variants]
 
   const { as } = props
 
