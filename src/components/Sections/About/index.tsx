@@ -14,14 +14,13 @@ const About = () => {
       >
         <div className='relative aspect-[16/12]'>
           <Image
-            className='rounded-xl z-50'
+            className='rounded-xl z-50 transition duration-300 ease-in-out grayscale hover:grayscale-0'
             fill
             src='/img/foto-tim.webp'
             alt='Profile Picture'
             sizes='100% 100%'
             priority
           />
-          <div className='absolute animate-pulse-light z-40 w-full h-full rounded-full top-0 left-0' />
         </div>
         <p className='text-[1.8rem] font-light leading-8'>
           Throughout the years I have developed a passion for everything related
