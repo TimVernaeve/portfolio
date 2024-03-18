@@ -59,7 +59,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           </div>
           <Link
             href='/'
-            className='flex gap-4 h-fit w-fit items-center justify-center uppercase text-s outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white'
+            className='flex gap-4 h-fit w-fit items-center justify-center uppercase text-s box-border border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white'
           >
             <div className='flex relative w-6 h-6'>
               <Icon name='arrow-down' className='w-6 h-6 rotate-90' />

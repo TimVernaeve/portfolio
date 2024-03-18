@@ -34,7 +34,7 @@ const Work = () => {
       >
         <a
           href='mailto:timvernaeve@gmail.com'
-          className='flex h-fit items-center justify-center uppercase w-full sm:w-fit text-s sm:text-xl outline outline-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white'
+          className='flex h-fit items-center justify-center uppercase w-full sm:w-fit text-s sm:text-xl box-border border-2 rounded-full px-4 py-3 hover:text-off-black hover:bg-white'
           target='_blank'
         >
           get in touch
