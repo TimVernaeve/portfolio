@@ -1,6 +1,9 @@
 import { Manrope } from 'next/font/google'
 
+import SmoothScroll from '@/components/SmoothScroll'
+
 import type { Metadata } from 'next'
+
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -20,7 +23,11 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang='en' className={`${manrope.className} no-scrollbar`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+      </body>
     </html>
   )
 }
